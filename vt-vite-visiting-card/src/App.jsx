@@ -108,12 +108,17 @@ function App() {
               </Box>
             </Box>
             {submittedData && (
-              <Box className="card">
-                <h3>User Information</h3>
-                <p><strong>Name:</strong> {submittedData.name}</p>
-                <p><strong>Occupation:</strong> {submittedData.occupation}</p>
-                <p><strong>Phone Number:</strong> {submittedData.phone}</p>
-                <p><strong>Email ID:</strong> {submittedData.email}</p>
+              <Box className="v-card" id="v-card">
+                <div className="left">
+                  <img src="user.png" alt="User Avatar" />
+                </div>
+
+                <div className="right">
+                  <p className="name">{submittedData.name}</p>
+                  <p className="occupation">{submittedData.occupation}</p>
+                  <p className="phone">{submittedData.phone}</p>
+                  <p className="email">{submittedData.email}</p>
+                </div>
               </Box>
             )}
           </Container>

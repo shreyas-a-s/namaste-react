@@ -4,3 +4,59 @@
   padding: 2rem;
   text-align: center;
 }
+
+.v-card{
+  min-width: 400px;
+  height: 200px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.17);
+  border-radius: 10px;
+}
+
+.left{
+  width: 40%;
+}
+.left img{
+  width: 150px;
+  /* background-color: green; */
+  height: 100%;
+  object-fit: cover;
+
+}
+.right{
+  width: 80%;
+  position: relative;
+}
+.name{
+  font-size: 32px;
+  margin-top: 57px;
+  margin-right: 180px;
+  color:rgb(91, 77, 245);
+  font-weight: bold;
+}
+.occupation{
+  position: absolute;
+  font-size: 24px;
+  color: gray ;
+  left: 5px;
+  bottom: 43px;
+}
+
+.phone{
+  position: absolute;
+  top: 2px;
+  right: 22px;
+  color: rgba(128, 128, 128, 0.805);
+  font-size: 15px;
+}
+
+.email{
+  position:absolute;
+  bottom: 2px;
+  right: 22px;
+  color: rgba(128, 128, 128, 0.805);
+  font-size: 15px;
+  text-decoration: none;
+}
