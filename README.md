@@ -1,7 +1,7 @@
 # namaste-react
 Learning react by following Namaste React programme by GTech Mulearn
 
-### Website 1: Visiting Card Generator
+### Website 1: Visiting Card Generator - [Link](https://vt-vite-visiting-card.netlify.app)
 
 ### Wesbite 2: Portfolio website utilizing React Router
 
