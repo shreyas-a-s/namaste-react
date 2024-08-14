@@ -60,7 +60,7 @@ function App() {
                 alignItems: 'center',
               }}
             >
-              <Typography component="h1" variant="h5">
+              <Typography component="h1" variant="h5" sx={{ fontWeight: 'bold', color: (theme) => theme.palette.primary.main }}>
                 Visiting Card Generator
               </Typography>
               <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
