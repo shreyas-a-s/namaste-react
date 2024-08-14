@@ -41,21 +41,39 @@ function App() {
                   margin="normal"
                   required
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="name"
+                  label="Name"
+                  name="name"
+                  autoComplete="name"
                   autoFocus
                 />
                 <TextField
                   margin="normal"
                   required
                   fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
+                  id="occupation"
+                  label="Occupation"
+                  name="occupation"
+                  autoComplete="off"
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="phone"
+                  label="Phone Number"
+                  type="tel"
+                  id="phone"
+                  autoComplete="tel"
                 />
                 <Button
                   type="submit"
@@ -63,7 +81,7 @@ function App() {
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
-                  Sign In
+                  Generate Card
                 </Button>
               </Box>
             </Box>
