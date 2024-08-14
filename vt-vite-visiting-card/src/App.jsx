@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css'
 import { toPng } from 'html-to-image';
 import { saveAs } from 'file-saver';
+import { Download as DownloadIcon, AutoAwesome as AutoAwesomeIcon } from '@mui/icons-material';
 
 const defaultTheme = createTheme();
 
@@ -114,6 +115,7 @@ function App() {
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
+                  startIcon={<AutoAwesomeIcon />}
                 >
                   Generate Card
                 </Button>
@@ -140,6 +142,7 @@ function App() {
                     variant="contained"
                     onClick={() => downloadCard()}
                     sx={{ mt: 3, mb: 2 }}
+                    startIcon={<DownloadIcon />}
                   >
                     Download Card
                   </Button>
