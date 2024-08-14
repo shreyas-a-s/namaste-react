@@ -35,6 +35,16 @@ function App() {
     setSubmittedData(formData);
   };
 
+  const downloadCard = () => {
+    toPng(document.getElementById('v-card'))
+      .then((dataUrl) => {
+        saveAs(dataUrl, 'visiting-card.png');
+      })
+      .catch((err) => {
+        console.error('Oops, something went wrong!', err);
+      });
+  }
+
   return (
     <>
       <div>
@@ -122,6 +132,17 @@ function App() {
                     <p className="phone">{submittedData.phone}</p>
                     <p className="email">{submittedData.email}</p>
                   </div>
+                </Box>
+                <Box>
+                  <Button
+                    fullWidth
+                    color="secondary"
+                    variant="contained"
+                    onClick={() => downloadCard()}
+                    sx={{ mt: 3, mb: 2 }}
+                  >
+                    Download Card
+                  </Button>
                 </Box>
               </>
             )}
