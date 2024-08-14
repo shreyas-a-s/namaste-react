@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -10,13 +11,26 @@ import './App.css'
 const defaultTheme = createTheme();
 
 function App() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+
+  const [formData, setFormData] = useState({
+    name: '',
+    occupation: '',
+    email: '',
+    phone: '',
+  });
+
+  const [submittedData, setSubmittedData] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmittedData(formData);
   };
 
   return (
@@ -45,6 +59,8 @@ function App() {
                   label="Name"
                   name="name"
                   autoComplete="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   autoFocus
                 />
                 <TextField
@@ -55,6 +71,8 @@ function App() {
                   label="Occupation"
                   name="occupation"
                   autoComplete="off"
+                  value={formData.occupation}
+                  onChange={handleChange}
                 />
                 <TextField
                   margin="normal"
@@ -64,6 +82,8 @@ function App() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
                 <TextField
                   margin="normal"
@@ -74,6 +94,8 @@ function App() {
                   type="tel"
                   id="phone"
                   autoComplete="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
                 <Button
                   type="submit"
@@ -85,6 +107,15 @@ function App() {
                 </Button>
               </Box>
             </Box>
+            {submittedData && (
+              <Box className="card">
+                <h3>User Information</h3>
+                <p><strong>Name:</strong> {submittedData.name}</p>
+                <p><strong>Occupation:</strong> {submittedData.occupation}</p>
+                <p><strong>Phone Number:</strong> {submittedData.phone}</p>
+                <p><strong>Email ID:</strong> {submittedData.email}</p>
+              </Box>
+            )}
           </Container>
         </ThemeProvider>
       </div>
