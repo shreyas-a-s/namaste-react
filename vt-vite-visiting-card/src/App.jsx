@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css'
+import { toPng } from 'html-to-image';
+import { saveAs } from 'file-saver';
 
 const defaultTheme = createTheme();
 
