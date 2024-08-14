@@ -32,7 +32,7 @@
 .name{
   font-size: 32px;
   margin-top: 57px;
-  margin-right: 180px;
+  margin-left: -80px;
   color:rgb(91, 77, 245);
   font-weight: bold;
 }
@@ -40,7 +40,7 @@
   position: absolute;
   font-size: 24px;
   color: gray ;
-  left: 5px;
+  left: -16px;
   bottom: 43px;
 }
 
