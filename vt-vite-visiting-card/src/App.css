@@ -32,7 +32,8 @@
 .name{
   font-size: 32px;
   margin-top: 57px;
-  margin-left: -80px;
+  margin-left: -16px;
+  text-align: left;
   color:rgb(91, 77, 245);
   font-weight: bold;
 }
