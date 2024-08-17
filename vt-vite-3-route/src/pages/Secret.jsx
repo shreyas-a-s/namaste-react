@@ -1,8 +1,36 @@
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 function Secret() {
   const location = useLocation()
   const { count } = location.state || {}
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth * 0.5, // 80% of window width
+    height: (window.innerWidth * 0.5 * 9) / 16, // Maintain 16:9 aspect ratio
+  })
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        // Example breakpoint for larger displays
+        setDimensions({
+          width: window.innerWidth * 0.5, // Larger size
+          height: (window.innerWidth * 0.5 * 9) / 16,
+        })
+      } else {
+        // Smaller displays
+        setDimensions({
+          width: window.innerWidth * 0.7, // Smaller size
+          height: (window.innerWidth * 0.7 * 9) / 16,
+        })
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize() // Call once to set initial size
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <>
@@ -20,8 +48,8 @@ function Secret() {
         ) : (
           <div>
             <iframe
-              width='532'
-              height='299'
+              width={dimensions.width}
+              height={dimensions.height}
               src='https://www.youtube.com/embed/xvFZjo5PgG0?autoplay=1&mute=1&controls=0'
               title='YouTube video player'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
