@@ -37,6 +37,15 @@
   padding: 2em;
 }
 
+.card button {
+  margin: 1.5rem;
+}
+
 .read-the-docs {
+  color: #888;
+}
+
+.subtitle {
+  font-size: 2rem;
   color: #888;
 }
