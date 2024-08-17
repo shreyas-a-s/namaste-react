@@ -10,7 +10,7 @@ function About() {
     const newCount = count + 1;
     setCount(newCount);
     if (newCount >= 10) {
-      navigate("/secret");
+      navigate("/secret", { state: { count } });
     }
   }
 
