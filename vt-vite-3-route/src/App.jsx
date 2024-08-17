@@ -10,14 +10,14 @@ function App() {
       </p>
       <h1>Super Secret Website</h1>
       <div className='card'>
-        <Link to="about">
-          <button>
-            About Us
-          </button>
-        </Link>
         <Link to="contact">
           <button>
             Contact Us
+          </button>
+        </Link>
+        <Link to="about">
+          <button>
+            About Us
           </button>
         </Link>
       </div>

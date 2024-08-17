@@ -24,14 +24,14 @@ function About() {
         <p>
           Click this button 10 times to go to Secret Page.
         </p>
+        <button onClick={handleClick}>
+          You have clicked me {count} times
+        </button>
         <Link to="/">
           <button>
             Go to Home
           </button>
         </Link>
-        <button onClick={handleClick}>
-          You have clicked {count} times
-        </button>
       </div>
     </>
   )
