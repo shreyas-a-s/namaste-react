@@ -1,4 +1,5 @@
 import { Container, TextField, Button, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
@@ -13,6 +14,7 @@ const SignUp = () => {
       <Button variant="contained" color="primary" fullWidth>
         Sign Up
       </Button>
+      <p style={{ textAlign: 'center' }}>Have an account? <Link to="/login">Log in</Link></p>
     </Container>
   )
 }
