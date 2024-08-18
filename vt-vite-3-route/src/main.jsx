@@ -7,6 +7,7 @@ import App from './App.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Secret from './pages/Secret.jsx'
+import PageNotFound from "./pages/PageNotFound.jsx";
 import './index.css'
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "secret",
     element: <Secret />
+  },
+  {
+    path: "/*",
+    element: <PageNotFound />
   }
 ]);
 
