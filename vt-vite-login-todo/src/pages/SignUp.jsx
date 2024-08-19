@@ -1,6 +1,6 @@
 import { Container, TextField, Button, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
   const [userData, setUserData] = useState({
@@ -14,6 +14,7 @@ const SignUp = () => {
     const savedUserList = localStorage.getItem('localUserList');
     return savedUserList ? JSON.parse(savedUserList) : [];
   });
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +30,8 @@ const SignUp = () => {
     }
 
     setUserList([...userList, userData]);
+    alert("Account successfully created! Login with credentials.");
+    navigate("/login");
   }
 
   useEffect(() => {
