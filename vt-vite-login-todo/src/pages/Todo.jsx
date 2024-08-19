@@ -45,6 +45,11 @@ const Todo = () => {
     );
   };
 
+  const handleSignOut = () => {
+    localStorage.removeItem("localUserEmail");
+    navigate("/login");
+  }
+
   return (
     <Container>
       <Typography
@@ -109,6 +114,11 @@ const Todo = () => {
             </IconButton>
           </Box>
         ))}
+      </Box>
+      <Box sx={{ display: "flex", justifyContent: 'center', margin: '2rem' }}>
+        <Button onClick={handleSignOut} variant='contained' color='error'>
+          Sign Out
+        </Button>
       </Box>
     </Container>
   )
