@@ -51,6 +51,19 @@ const Todo = () => {
     navigate("/login");
   }
 
+  const handleDelete = (id) => {
+    setUserList((prevUserList) =>
+      prevUserList.map((user) =>
+        user.email === userEmail
+          ? {
+            ...user,
+            todoList: user.todoList.filter((item) => item.id !== id),
+          }
+          : user
+      )
+    );
+  };
+
   return (
     <Container>
       <Typography
@@ -110,6 +123,7 @@ const Todo = () => {
             />
             <IconButton
               color="error"
+              onClick={() => handleDelete(item.id)}
             >
               <DeleteIcon />
             </IconButton>
