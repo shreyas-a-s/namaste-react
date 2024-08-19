@@ -72,6 +72,8 @@ const Todo = () => {
         gutterBottom
         sx={{ textAlign: 'center' }}
       >
+        Hi, {userList.find(user => user.email === userEmail).name}
+        <br />
         Welcome to Todo Page
       </Typography>
       <form onSubmit={handleSubmit}>
