@@ -81,9 +81,14 @@ const Todo = () => {
           </Button>
         </Box>
       </form>
-      <Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         {userList.find(user => user.email === userEmail).todoList.map((item) => (
-          <>
+          <Box
+            key={item.id}
+            display="flex"
+            alignItems="center"
+            sx={{ mb: 1 }}
+          >
             <FormControlLabel
               key={item.id}
               control={
@@ -102,7 +107,7 @@ const Todo = () => {
             >
               <DeleteIcon />
             </IconButton>
-          </>
+          </Box>
         ))}
       </Box>
     </Container>
