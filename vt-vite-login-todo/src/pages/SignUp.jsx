@@ -51,6 +51,7 @@ const SignUp = () => {
           onChange={(e) => setUserData({...userData, name: e.target.value})}
           fullWidth
           margin='normal'
+          required
         />
         <TextField
           label='Email'
@@ -59,6 +60,7 @@ const SignUp = () => {
           onChange={(e) => setUserData({...userData, email: e.target.value})}
           fullWidth
           margin='normal'
+          required
         />
         <TextField
           label='Password'
@@ -67,6 +69,7 @@ const SignUp = () => {
           onChange={(e) => setUserData({...userData, password: e.target.value})}
           fullWidth
           margin='normal'
+          required
         />
         <TextField
           label='Confirm Password'
@@ -75,6 +78,7 @@ const SignUp = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           fullWidth
           margin='normal'
+          required
         />
         <Button type="submit" variant='contained' color='primary' fullWidth>
           Sign Up
