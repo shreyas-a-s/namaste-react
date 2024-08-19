@@ -24,7 +24,7 @@ const Login = () => {
       return;
     }
 
-    localStorage.setItem("localUserData", JSON.stringify(loginData));
+    localStorage.setItem("localUserEmail", loginData.email);
     navigate("/todo");
   }
 
