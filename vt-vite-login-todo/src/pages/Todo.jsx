@@ -29,7 +29,7 @@ const Todo = () => {
 
     setNewTodo({...newTodo, id: uuidv4()});
     updateTodoList();
-    console.log(userList);
+    setNewTodo({...newTodo, text: ""})
   }
 
   const updateTodoList = () => {
