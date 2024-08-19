@@ -29,14 +29,14 @@ const SignUp = () => {
       return
     }
 
-    setUserList([...userList, userData]);
-    alert("Account successfully created! Login with credentials.");
-    navigate("/login");
+    setUserList(() => {
+      const updatedUserList = [...userList, userData];
+      localStorage.setItem("localUserList", JSON.stringify(updatedUserList));
+      alert("Account successfully created! Login with credentials.");
+      navigate("/login");
+      return updatedUserList;
+    });
   }
-
-  useEffect(() => {
-    localStorage.setItem("localUserList", JSON.stringify(userList));
-  }, [userList]);
 
   return (
     <Container maxWidth='sm'>
