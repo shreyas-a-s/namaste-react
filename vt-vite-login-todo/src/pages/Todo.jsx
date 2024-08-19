@@ -87,7 +87,7 @@ const Todo = () => {
         </Box>
       </form>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-        {userList.find(user => user.email === userEmail).todoList.map((item) => (
+        { userEmail && userList.find(user => user.email === userEmail).todoList.map((item) => (
           <Box
             key={item.id}
             display="flex"
