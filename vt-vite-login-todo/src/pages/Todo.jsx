@@ -27,18 +27,19 @@ const Todo = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setNewTodo({...newTodo, id: uuidv4()});
-    updateTodoList();
+    const uniqueTodo = {...newTodo, id: uuidv4()}
+    setNewTodo(uniqueTodo);
+    updateTodoList(uniqueTodo);
     setNewTodo({...newTodo, text: ""})
   }
 
-  const updateTodoList = () => {
+  const updateTodoList = (uniqueTodo) => {
     setUserList((prevArray) =>
       prevArray.map((user) =>
         user.email === userEmail
           ? {
             ...user,
-            todoList: [...user.todoList, newTodo],
+            todoList: [...user.todoList, uniqueTodo],
           }
           : user
       )
