@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { v4 as uuidv4 } from 'uuid';
 
 const Todo = () => {
   const [newTodo, setNewTodo] = useState({
@@ -26,6 +27,7 @@ const Todo = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    setNewTodo({...newTodo, id: uuidv4()});
     updateTodoList();
     console.log(userList);
   }
