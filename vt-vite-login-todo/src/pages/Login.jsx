@@ -1,5 +1,5 @@
 import { Container, TextField, Button, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -27,6 +27,12 @@ const Login = () => {
     localStorage.setItem("localUserEmail", loginData.email);
     navigate("/todo");
   }
+
+  useEffect(() => {
+    if (localStorage.getItem("localUserEmail")) {
+      navigate("/todo");
+    }
+  }, [navigate]);
 
   return (
     <Container maxWidth="sm">

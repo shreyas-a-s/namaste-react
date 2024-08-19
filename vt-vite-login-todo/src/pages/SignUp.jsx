@@ -38,6 +38,11 @@ const SignUp = () => {
     });
   }
 
+  useEffect(() => {
+    if (localStorage.getItem("localUserEmail")) {
+      navigate("/todo");
+    }
+  }, [navigate]);
   return (
     <Container maxWidth='sm'>
       <Typography variant='h4' component='h1' gutterBottom>
