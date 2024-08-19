@@ -1,5 +1,5 @@
 # namaste-react
-Learning react by following [Namaste React](https://www.youtube.com/playlist?list=PL4rPSem29OZQdVEnUo4mwuNi00mmx36Ky) programme undee MuTech by GTech Mulearn.
+Learning react by following [Namaste React](https://www.youtube.com/playlist?list=PL4rPSem29OZQdVEnUo4mwuNi00mmx36Ky) programme under MuTech by GTech Mulearn.
 
 ### Website 1: Visiting Card Generator - [Link](https://vt-vite-visiting-card.netlify.app)
 
