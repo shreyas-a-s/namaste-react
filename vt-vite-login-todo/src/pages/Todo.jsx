@@ -83,24 +83,26 @@ const Todo = () => {
       </form>
       <Box>
         {/* {items.map((item) => ( */}
-          <FormControlLabel
-            // key={item.id}
-            control={
-              <Checkbox
-                checked={true}
-              />
-            }
-          label={
-            <Typography sx={{ fontSize: '1.1rem' }}>
-              My first todo
-            </Typography>
-          }
-          />
-        <IconButton
-          color="error"
-        >
-          <DeleteIcon />
-        </IconButton>
+          <>
+            <FormControlLabel
+              // key={item.id}
+              control={
+                <Checkbox
+                  checked={true}
+                />
+              }
+              label={
+                <Typography sx={{ fontSize: '1.1rem' }}>
+                  My first todo
+                </Typography>
+              }
+            />
+            <IconButton
+              color="error"
+            >
+              <DeleteIcon />
+            </IconButton>
+          </>
         {/* ))} */}
       </Box>
     </Container>
