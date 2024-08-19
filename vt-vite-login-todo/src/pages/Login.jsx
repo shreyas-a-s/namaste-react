@@ -7,11 +7,13 @@ const Login = () => {
       <Typography variant="h4" component="h1" gutterBottom>
         Login Page
       </Typography>
-      <TextField label="Email" fullWidth margin="normal" />
-      <TextField label="Password" type="password" fullWidth margin="normal" />
-      <Button variant="contained" color="primary" fullWidth>
-        Login
-      </Button>
+      <form >
+        <TextField label="Email" fullWidth margin="normal" required />
+        <TextField label="Password" type="password" fullWidth margin="normal" required />
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Login
+        </Button>
+      </form>
       <p style={{ textAlign: 'center' }}>Don&apos;t have an account? <Link to="/signup">Sign up</Link></p>
     </Container>
   )
