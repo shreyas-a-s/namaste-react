@@ -1,9 +1,18 @@
-import { Container, Typography } from '@mui/material';
-import { useEffect } from 'react';
+import { Box, Button, Checkbox, Container, FormControlLabel, IconButton, TextField, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Todo = () => {
+  const [newTodo, setNewTodo] = useState({
+    id: null,
+    text: "",
+    isDone: false
+  });
   const navigate = useNavigate();
+  const userList = JSON.parse(localStorage.getItem('localUserList')) || [];
+  const userEmail = localStorage.getItem('localUserEmail') || "";
 
   useEffect(() => {
     if (!localStorage.getItem("localUserEmail")) {
@@ -12,12 +21,66 @@ const Todo = () => {
     }
   }, [navigate]);
 
+  const handleSubmit = () => {}
+
   return (
     <Container>
-      <Typography variant="h3" component="h1" gutterBottom>
-        Welcome to the Todo Page
+      <Typography
+        variant="h3"
+        component="h1"
+        gutterBottom
+        sx={{ textAlign: 'center' }}
+      >
+        Welcome to Todo Page
       </Typography>
-      {/* Additional content goes here */}
+      <form onSubmit={handleSubmit}>
+        <Box
+          display="flex"
+          alignItems="center"
+          gap={1}
+        >
+          <TextField
+            label="Enter Todo"
+            value={newTodo.text}
+            onChange={(e) => setNewTodo({ ...newTodo, text: e.target.value })}
+            fullWidth
+            required
+            sx={{ flex: 1 }}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            sx={{
+              height: "3.4rem",
+            }}
+          >
+            <AddIcon />
+          </Button>
+        </Box>
+      </form>
+      <Box>
+        {/* {items.map((item) => ( */}
+          <FormControlLabel
+            // key={item.id}
+            control={
+              <Checkbox
+                checked="true"
+              />
+            }
+          label={
+            <Typography sx={{ fontSize: '1.1rem' }}>
+              My first todo
+            </Typography>
+          }
+          />
+        <IconButton
+          color="error"
+        >
+          <DeleteIcon />
+        </IconButton>
+        {/* ))} */}
+      </Box>
     </Container>
   )
 }

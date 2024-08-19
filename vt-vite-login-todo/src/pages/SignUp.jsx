@@ -7,6 +7,7 @@ const SignUp = () => {
     name: '',
     email: '',
     password: '',
+    todoList: []
   })
   const [confirmPassword, setConfirmPassword] = useState("");
   const [userList, setUserList] = useState(() => {
