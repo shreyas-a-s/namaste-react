@@ -10,8 +10,8 @@ const Todo = () => {
     text: "",
     isDone: false
   });
+  const [userList, setUserList] = useState(JSON.parse(localStorage.getItem('localUserList')) || []);
   const navigate = useNavigate();
-  const userList = JSON.parse(localStorage.getItem('localUserList')) || [];
   const userEmail = localStorage.getItem('localUserEmail') || "";
 
   useEffect(() => {
@@ -19,9 +19,29 @@ const Todo = () => {
       alert("You must log in to use this app.");
       navigate("/login");
     }
-  }, [navigate]);
 
-  const handleSubmit = () => {}
+    localStorage.setItem("localUserList", JSON.stringify(userList));
+  }, [navigate, userList]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    updateTodoList();
+    console.log(userList);
+  }
+
+  const updateTodoList = () => {
+    setUserList((prevArray) =>
+      prevArray.map((user) =>
+        user.email === userEmail
+          ? {
+            ...user,
+            todoList: [...user.todoList, newTodo],
+          }
+          : user
+      )
+    );
+  };
 
   return (
     <Container>
@@ -65,7 +85,7 @@ const Todo = () => {
             // key={item.id}
             control={
               <Checkbox
-                checked="true"
+                checked={true}
               />
             }
           label={
