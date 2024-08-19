@@ -82,10 +82,10 @@ const Todo = () => {
         </Box>
       </form>
       <Box>
-        {/* {items.map((item) => ( */}
+        {userList.find(user => user.email === userEmail).todoList.map((item) => (
           <>
             <FormControlLabel
-              // key={item.id}
+              key={item.id}
               control={
                 <Checkbox
                   checked={true}
@@ -93,7 +93,7 @@ const Todo = () => {
               }
               label={
                 <Typography sx={{ fontSize: '1.1rem' }}>
-                  My first todo
+                  {item.text}
                 </Typography>
               }
             />
@@ -103,7 +103,7 @@ const Todo = () => {
               <DeleteIcon />
             </IconButton>
           </>
-        {/* ))} */}
+        ))}
       </Box>
     </Container>
   )
