@@ -134,7 +134,7 @@ const Todo = () => {
                 />
               }
               label={
-                <Typography sx={{ fontSize: '1.1rem' }}>
+                <Typography sx={{ fontSize: '1.1rem', textDecoration: item.isDone ? 'line-through' : 'none' }}>
                   {item.text}
                 </Typography>
               }
