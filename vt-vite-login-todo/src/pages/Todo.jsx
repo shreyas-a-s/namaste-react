@@ -64,6 +64,21 @@ const Todo = () => {
     );
   };
 
+  const handleTodoToggle = (id) => {
+    setUserList((prevUserList) =>
+      prevUserList.map((user) =>
+        user.email === userEmail
+          ? {
+            ...user,
+            todoList: user.todoList.map((todo) =>
+              todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
+            ),
+          }
+          : user
+      )
+    );
+  }
+
   return (
     <Container>
       <Typography
@@ -114,7 +129,8 @@ const Todo = () => {
               key={item.id}
               control={
                 <Checkbox
-                  checked={true}
+                  checked={item.isDone}
+                  onChange={() => handleTodoToggle(item.id)}
                 />
               }
               label={
